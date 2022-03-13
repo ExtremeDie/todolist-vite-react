@@ -1,12 +1,15 @@
-import { useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+import Navbar from './shared/components/Navbar';
+import logo from './logo.svg';
+import { useState } from 'react';
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <div className="App">
+      <Navbar />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>Hello Vite + React!</p>
@@ -37,6 +40,11 @@ function App() {
             Vite Docs
           </a>
         </p>
+        <div className="m-4 space-x-2">
+          <button className="btn btn-primary">primary</button>
+          <button className="btn btn-secondary">secondary</button>
+          <button className="btn btn-accent">accent</button>
+        </div>
       </header>
     </div>
   );
