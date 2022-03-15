@@ -1,16 +1,18 @@
+import { Link, useParams } from 'react-router-dom';
+
 function ToDoListCard() {
   return (
     <div className="card w-9/12 sm:w-3/4 md:w-1/2 bg-base-100 shadow-xl mx-auto">
       <div className="card-body">
         <div className="tabs tabs-boxed">
           <a className="tab btn btn-sm btn-outline border-none w-1/3">
-            Ongoing
+            <Link to="/ongoing">Ongoing</Link>
           </a>
           <a className="tab btn btn-sm btn-outline border-none w-1/3 tab-active">
-            Completed
+            <Link to="/completed">Completed</Link>
           </a>
           <a className="tab btn btn-sm btn-outline border-none w-1/3">
-            Deleted
+            <Link to="/deleted">Deleted</Link>
           </a>
         </div>
 
