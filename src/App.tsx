@@ -8,6 +8,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Routes>
+        <Route path="/" element={<ToDoListCard />} />
         <Route path="/ongoing" element={<ToDoListCard />} />
         <Route path="/completed" element={<ToDoListCard />} />
         <Route path="/deleted" element={<ToDoListCard />} />

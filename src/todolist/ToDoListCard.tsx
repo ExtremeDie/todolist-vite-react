@@ -1,19 +1,38 @@
-import { Link, useParams } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 function ToDoListCard() {
+  let location = useLocation();
+  const pathname = location.pathname;
+  const todolist = [{}];
+
   return (
     <div className="card w-9/12 sm:w-3/4 md:w-1/2 bg-base-100 shadow-xl mx-auto">
       <div className="card-body">
         <div className="tabs tabs-boxed">
-          <a className="tab btn btn-sm btn-outline border-none w-1/3">
-            <Link to="/ongoing">Ongoing</Link>
-          </a>
-          <a className="tab btn btn-sm btn-outline border-none w-1/3 tab-active">
-            <Link to="/completed">Completed</Link>
-          </a>
-          <a className="tab btn btn-sm btn-outline border-none w-1/3">
-            <Link to="/deleted">Deleted</Link>
-          </a>
+          <Link
+            className={`tab btn btn-sm btn-outline border-none w-1/3 ${
+              pathname == '/ongoing' ? 'tab-active' : ''
+            }`}
+            to="/ongoing"
+          >
+            Ongoing
+          </Link>
+          <Link
+            className={`tab btn btn-sm btn-outline border-none w-1/3 ${
+              pathname == '/completed' ? 'tab-active' : ''
+            }`}
+            to="/completed"
+          >
+            Completed
+          </Link>
+          <Link
+            className={`tab btn btn-sm btn-outline border-none w-1/3 ${
+              pathname == '/deleted' ? 'tab-active' : ''
+            }`}
+            to="/deleted"
+          >
+            Deleted
+          </Link>
         </div>
 
         <div className="overflow-x-auto">
